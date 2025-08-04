@@ -1,1 +1,1 @@
-# simple-example-projects-in-Python
+# 🐍 Simple Example Projects in Python

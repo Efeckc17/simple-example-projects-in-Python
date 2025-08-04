@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧮 Web Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="header">
+            <h1>🧮 Web Calculator</h1>
+        </div>
+        
+        <div class="error-message" id="errorMessage"></div>
+        
+        <div class="display-container">
+            <div class="history-display" id="historyDisplay"></div>
+            <div class="main-display" id="mainDisplay">0</div>
+        </div>
+        
+        <div class="mode-toggle">
+            <button class="mode-btn active" onclick="switchMode('basic')">Basic</button>
+            <button class="mode-btn" onclick="switchMode('advanced')">Advanced</button>
+        </div>
+        
+        <!-- Basic Mode -->
+        <div id="basicMode" class="basic-mode">
+            <div class="button-grid">
+                <!-- Row 1 -->
+                <button class="btn btn-clear" onclick="clearAll()">C</button>
+                <button class="btn btn-clear" onclick="clearEntry()">CE</button>
+                <button class="btn btn-function" onclick="backspace()">⌫</button>
+                <button class="btn btn-operator" onclick="appendOperator('/')">/</button>
+                
+                <!-- Row 2 -->
+                <button class="btn btn-number" onclick="appendNumber('7')">7</button>
+                <button class="btn btn-number" onclick="appendNumber('8')">8</button>
+                <button class="btn btn-number" onclick="appendNumber('9')">9</button>
+                <button class="btn btn-operator" onclick="appendOperator('*')">×</button>
+                
+                <!-- Row 3 -->
+                <button class="btn btn-number" onclick="appendNumber('4')">4</button>
+                <button class="btn btn-number" onclick="appendNumber('5')">5</button>
+                <button class="btn btn-number" onclick="appendNumber('6')">6</button>
+                <button class="btn btn-operator" onclick="appendOperator('-')">−</button>
+                
+                <!-- Row 4 -->
+                <button class="btn btn-number" onclick="appendNumber('1')">1</button>
+                <button class="btn btn-number" onclick="appendNumber('2')">2</button>
+                <button class="btn btn-number" onclick="appendNumber('3')">3</button>
+                <button class="btn btn-operator" onclick="appendOperator('+')">+</button>
+                
+                <!-- Row 5 -->
+                <button class="btn btn-function" onclick="toggleSign()">±</button>
+                <button class="btn btn-number" onclick="appendNumber('0')">0</button>
+                <button class="btn btn-number" onclick="appendDecimal()">.</button>
+                <button class="btn btn-equals" onclick="calculate()">=</button>
+            </div>
+        </div>
+        
+        <!-- Advanced Mode -->
+        <div id="advancedMode" class="advanced-mode">
+            <div class="advanced-functions">
+                <button class="btn btn-function" onclick="applyFunction('sqrt')">√</button>
+                <button class="btn btn-function" onclick="applyFunction('square')">x²</button>
+                <button class="btn btn-function" onclick="applyFunction('reciprocal')">1/x</button>
+                <button class="btn btn-function" onclick="appendOperator('%')">%</button>
+                
+                <button class="btn btn-function" onclick="applyFunction('sin')">sin</button>
+                <button class="btn btn-function" onclick="applyFunction('cos')">cos</button>
+                <button class="btn btn-function" onclick="applyFunction('tan')">tan</button>
+                <button class="btn btn-function" onclick="applyFunction('factorial')">n!</button>
+                
+                <button class="btn btn-function" onclick="applyFunction('log')">log</button>
+                <button class="btn btn-function" onclick="applyFunction('ln')">ln</button>
+                <button class="btn btn-function" onclick="appendConstant('pi')">π</button>
+                <button class="btn btn-function" onclick="appendConstant('e')">e</button>
+            </div>
+            
+            <div class="button-grid">
+                <!-- Basic buttons are also available in advanced mode -->
+                <button class="btn btn-clear" onclick="clearAll()">C</button>
+                <button class="btn btn-clear" onclick="clearEntry()">CE</button>
+                <button class="btn btn-function" onclick="backspace()">⌫</button>
+                <button class="btn btn-operator" onclick="appendOperator('/')">/</button>
+                
+                <button class="btn btn-number" onclick="appendNumber('7')">7</button>
+                <button class="btn btn-number" onclick="appendNumber('8')">8</button>
+                <button class="btn btn-number" onclick="appendNumber('9')">9</button>
+                <button class="btn btn-operator" onclick="appendOperator('*')">×</button>
+                
+                <button class="btn btn-number" onclick="appendNumber('4')">4</button>
+                <button class="btn btn-number" onclick="appendNumber('5')">5</button>
+                <button class="btn btn-number" onclick="appendNumber('6')">6</button>
+                <button class="btn btn-operator" onclick="appendOperator('-')">−</button>
+                
+                <button class="btn btn-number" onclick="appendNumber('1')">1</button>
+                <button class="btn btn-number" onclick="appendNumber('2')">2</button>
+                <button class="btn btn-number" onclick="appendNumber('3')">3</button>
+                <button class="btn btn-operator" onclick="appendOperator('+')">+</button>
+                
+                <button class="btn btn-function" onclick="toggleSign()">±</button>
+                <button class="btn btn-number" onclick="appendNumber('0')">0</button>
+                <button class="btn btn-number" onclick="appendDecimal()">.</button>
+                <button class="btn btn-equals" onclick="calculate()">=</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Flask Web Calculator</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
