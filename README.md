@@ -57,6 +57,37 @@ pip install -r requirements.txt
 python password_gui.py
 ```
 
+### 🎮 Number Guessing Game
+A fun guessing game implemented in two different ways:
+
+- **CLI** - Command line interface with interactive menu
+- **GUI** - Desktop app with modern Tkinter interface
+
+#### Features:
+- Multiple difficulty levels (Easy, Medium, Hard, Expert)
+- Smart hint system (direction, temperature, distance)
+- Real-time performance tracking
+- Game statistics and scoring
+- Colorful feedback and emojis
+- Time tracking and performance rating
+
+#### Difficulty Levels:
+- **Easy:** 1-50, 10 attempts
+- **Medium:** 1-100, 7 attempts  
+- **Hard:** 1-200, 5 attempts
+- **Expert:** 1-500, 8 attempts
+
+#### Run the projects:
+```bash
+# CLI Number Guessing Game
+cd number-guessing-game/cli
+python number_game.py
+
+# GUI Number Guessing Game
+cd number-guessing-game/gui
+python number_game_gui.py
+```
+
 ## 🛠️ Requirements
 
 - Python 3.7+
