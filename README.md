@@ -11,6 +11,7 @@ Collection of simple Python projects for learning and practice.
 | 🎮 **Number Guessing Game** | CLI, Tkinter, Game Logic | ⭐ Easy | Interactive guessing game with multiple difficulty levels | [Details](#-number-guessing-game) |
 | 📝 **TODO App** | SQLite, CLI, Tkinter, CRUD | ⭐⭐⭐ Intermediate | Task management with database operations | [Details](#-todo-app-with-sqlite) |
 | 🌐 **Speed Test** | Network API, Threading, Progress | ⭐⭐⭐ Intermediate | Internet speed testing with real-time updates | [Details](#-internet-speed-test) |
+| 🎨 **ASCII Art Generator** | Image Processing, CLI, File I/O | ⭐⭐ Beginner | Convert text and images to ASCII art | [Details](#-ascii-art-generator) |
 
 ## 📁 Project Details
 
@@ -177,17 +178,69 @@ cd ..
 python speedtest_core.py
 ```
 
+### 🎨 ASCII Art Generator
+A creative CLI tool for converting text and images to ASCII art:
+
+- **Text to ASCII** - Transform text using various artistic fonts
+- **Image to ASCII** - Convert images to character-based art
+
+#### Features:
+- **Multiple Font Styles** - 25+ figlet fonts (slant, big, block, bubble, etc.)
+- **Character Set Options** - Detailed, simple, classic, minimal character sets
+- **Image Processing** - Convert JPG, PNG, and other formats to ASCII
+- **Customizable Output** - Adjustable width, border options
+- **File Export** - Save ASCII art to text files
+- **Preview Functions** - Preview fonts and character sets before converting
+
+#### Text Conversion Examples:
+- Basic: Simple text to ASCII art
+- Styled: Custom fonts and decorative borders
+- Sized: Adjustable width for different displays
+
+#### Image Conversion Examples:
+- Photos: Convert portraits and landscapes
+- Logos: Transform brand graphics to text art
+- Icons: Create ASCII versions of symbols
+
+#### Run the project:
+```bash
+# Install dependencies
+cd ascii-art-generator
+pip install -r requirements.txt
+
+# Convert text to ASCII art
+python ascii_generator.py text "Hello World"
+python ascii_generator.py text "Python" --font big --width 120
+
+# Convert image to ASCII art
+python ascii_generator.py image photo.jpg --width 100
+python ascii_generator.py image logo.png --chars simple --banner
+
+# Preview available options
+python ascii_generator.py --list-fonts
+python ascii_generator.py --list-chars
+python ascii_generator.py --preview-fonts "ABC"
+
+# Save to file
+python ascii_generator.py text "Save Me" --output my_art.txt
+
+# Get detailed help
+python ascii_generator.py --help-detailed
+```
+
 ## 🛠️ Global Requirements
 
 - **Python 3.7+** (Required for all projects)
 - **Flask** - Web calculator only
 - **pyperclip** - GUI password generator clipboard features
 - **speedtest-cli** - Internet speed test functionality
+- **Pillow** - ASCII art generator image processing
+- **pyfiglet** - ASCII art generator text styling
 
 ### 📦 Quick Install All Dependencies
 ```bash
 # Install all project dependencies at once
-pip install flask pyperclip speedtest-cli
+pip install flask pyperclip speedtest-cli Pillow pyfiglet
 ```
 
 ## 🎯 Learning Goals
@@ -196,7 +249,7 @@ This repository demonstrates progressive Python concepts:
 
 | Skill Level | Technologies Covered | Projects |
 |-------------|---------------------|----------|
-| **🟢 Beginner** | Basic Python, Input/Output, Conditionals | Calculator, Password Gen, Guessing Game |
+| **🟢 Beginner** | Basic Python, Input/Output, Conditionals | Calculator, Password Gen, Guessing Game, ASCII Art |
 | **🟡 Intermediate** | GUI Programming, Database, File I/O | TODO App, Advanced GUIs |
 | **🟠 Advanced** | Threading, API Integration, Network Programming | Speed Test, Web Calculator |
 
@@ -222,7 +275,7 @@ This repository demonstrates progressive Python concepts:
 
 2. **Install dependencies**
    ```bash
-   pip install flask pyperclip speedtest-cli
+   pip install flask pyperclip speedtest-cli Pillow pyfiglet
    ```
 
 3. **Pick a project from the table above and follow the specific instructions!**
