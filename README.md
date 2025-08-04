@@ -88,6 +88,44 @@ cd number-guessing-game/gui
 python number_game_gui.py
 ```
 
+### 📝 TODO App with SQLite
+A task management application demonstrating SQLite database operations:
+
+- **CLI** - Command line interface with comprehensive menu system
+- **GUI** - Modern Tkinter interface with all CRUD operations
+
+#### Features:
+- **SQLite Database Integration** - Learn SQL operations hands-on
+- **CRUD Operations** - Create, Read, Update, Delete tasks
+- **Advanced Filtering** - View by status, search functionality
+- **Priority System** - High, Medium, Low priority levels
+- **Statistics Dashboard** - Task completion analytics
+- **Database Management** - View database info and structure
+
+#### SQL Concepts Demonstrated:
+- **CREATE TABLE** - Database schema design
+- **INSERT** - Adding new records
+- **SELECT** - Querying data with WHERE, ORDER BY
+- **UPDATE** - Modifying existing records
+- **DELETE** - Removing records
+- **AGGREGATION** - COUNT, GROUP BY for statistics
+- **SEARCH** - LIKE operator for text search
+
+#### Run the projects:
+```bash
+# CLI TODO App
+cd todo-app/cli
+python todo_cli.py
+
+# GUI TODO App
+cd todo-app/gui
+python todo_gui.py
+
+# Database demo (standalone)
+cd todo-app
+python database.py
+```
+
 ## 🛠️ Requirements
 
 - Python 3.7+
@@ -101,6 +139,8 @@ This repository demonstrates:
 - **GUI Development** - Desktop applications with Tkinter
 - **Web Development** - Full-stack applications with Flask
 - **CLI Applications** - Command-line interfaces and argument parsing
+- **Database Programming** - SQLite integration and SQL operations
+- **CRUD Operations** - Create, Read, Update, Delete data patterns
 - **Code Organization** - Clean project structure and best practices
 - **Security Practices** - Safe input handling and validation
 
