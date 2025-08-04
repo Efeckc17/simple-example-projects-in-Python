@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👤 User Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>👤 User Manager</h2>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#login" class="nav-link" id="loginTab">🔐 Login</a>
+                <a href="#register" class="nav-link" id="registerTab">📝 Register</a>
+                <a href="#dashboard" class="nav-link hidden" id="dashboardTab">📊 Dashboard</a>
+                <a href="#" class="nav-link hidden" id="logoutBtn">🚪 Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Alert Messages -->
+    <div id="alertContainer" class="alert-container"></div>
+
+    <!-- Login Section -->
+    <section id="loginSection" class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>🔐 Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">Username or Email:</label>
+                        <input type="text" id="loginUsername" required placeholder="Enter username or email">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword" required placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="loginSubmit">
+                        <span class="btn-text">🔐 Login</span>
+                        <span class="btn-loading hidden">⏳ Logging in...</span>
+                    </button>
+                </form>
+                <p class="auth-switch">
+                    Don't have an account? 
+                    <a href="#register" id="switchToRegister">Register here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Register Section -->
+    <section id="registerSection" class="auth-section hidden">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>📝 Register</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">Username:</label>
+                        <input type="text" id="registerUsername" required placeholder="Choose a username" minlength="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email:</label>
+                        <input type="email" id="registerEmail" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password:</label>
+                        <input type="password" id="registerPassword" required placeholder="Choose a password" minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" required placeholder="Confirm your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="registerSubmit">
+                        <span class="btn-text">📝 Register</span>
+                        <span class="btn-loading hidden">⏳ Creating account...</span>
+                    </button>
+                </form>
+                <p class="auth-switch">
+                    Already have an account? 
+                    <a href="#login" id="switchToLogin">Login here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboardSection" class="dashboard hidden">
+        <div class="dashboard-container">
+            
+            <!-- User Profile Card -->
+            <div class="dashboard-card profile-card">
+                <h3>👤 My Profile</h3>
+                <div class="profile-content">
+                    <div class="profile-avatar">
+                        <img id="avatarImg" src="" alt="Avatar" class="avatar-img">
+                        <input type="file" id="avatarUpload" accept="image/*" class="hidden">
+                        <button id="changeAvatarBtn" class="btn btn-secondary btn-small">📸 Change</button>
+                    </div>
+                    <div class="profile-info">
+                        <div class="info-item">
+                            <label>👤 Username:</label>
+                            <span id="profileUsername">-</span>
+                            <button id="editUsernameBtn" class="btn btn-secondary btn-small">✏️</button>
+                        </div>
+                        <div class="info-item">
+                            <label>📧 Email:</label>
+                            <span id="profileEmail">-</span>
+                            <button id="editEmailBtn" class="btn btn-secondary btn-small">✏️</button>
+                        </div>
+                        <div class="info-item">
+                            <label>📅 Member Since:</label>
+                            <span id="profileCreated">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Card -->
+            <div class="dashboard-card stats-card">
+                <h3>📊 Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalUsers">-</div>
+                        <div class="stat-label">👥 Total Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="todayUsers">-</div>
+                        <div class="stat-label">🆕 Today's Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalLogs">-</div>
+                        <div class="stat-label">📝 Total Logs</div>
+                    </div>
+                </div>
+                <button id="refreshStatsBtn" class="btn btn-secondary">🔄 Refresh</button>
+            </div>
+
+            <!-- Server Logs Card -->
+            <div class="dashboard-card logs-card">
+                <h3>📋 Server Logs</h3>
+                <div class="logs-controls">
+                    <button id="refreshLogsBtn" class="btn btn-secondary">🔄 Refresh</button>
+                    <select id="logsLimit" class="form-select">
+                        <option value="25">Last 25</option>
+                        <option value="50" selected>Last 50</option>
+                        <option value="100">Last 100</option>
+                    </select>
+                </div>
+                <div class="logs-container" id="logsContainer">
+                    <div class="logs-loading">⏳ Loading logs...</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Edit Profile Modal -->
+    <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Edit Profile</h3>
+                <button id="closeModal" class="btn-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <div class="form-group">
+                        <label id="editLabel">Value:</label>
+                        <input type="text" id="editInput" required>
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="button" id="cancelEdit" class="btn btn-secondary">❌ Cancel</button>
+                        <button type="submit" class="btn btn-primary">💾 Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Flask==3.0.3
+Flask-CORS==4.0.1
+Werkzeug==3.0.4
+bcrypt==4.1.2
+PyJWT==2.8.0
+Pillow==10.4.0

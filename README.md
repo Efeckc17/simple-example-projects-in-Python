@@ -19,6 +19,7 @@ Collection of simple Python projects for learning and practice.
 | 📝 **TODO App** | SQLite, CLI, Tkinter, CRUD | ⭐⭐⭐ Intermediate | Task management with database operations | [Details](#-todo-app-with-sqlite) |
 | 🌐 **Speed Test** | Network API, Threading, Progress | ⭐⭐⭐ Intermediate | Internet speed testing with real-time updates | [Details](#-internet-speed-test) |
 | 🎨 **ASCII Art Generator** | Image Processing, CLI, File I/O | ⭐⭐ Beginner | Convert text and images to ASCII art | [Details](#-ascii-art-generator) |
+| 👤 **User Management API** | Flask API, JWT, SQLite, Full-Stack , HTML/CSS/JS  | ⭐⭐⭐⭐ Advanced | Complete API with authentication and frontend | [Details](#-user-management-api) |
 
 ## 📁 Project Details
 
@@ -235,19 +236,83 @@ python ascii_generator.py text "Save Me" --output my_art.txt
 python ascii_generator.py --help-detailed
 ```
 
+### 👤 User Management API
+A complete full-stack web application demonstrating modern API development:
+
+- **Backend** - Flask API with JWT authentication and SQLite database
+- **Frontend** - Modern vanilla JavaScript with responsive design
+
+#### Features:
+- **JWT Authentication** - Secure token-based login system
+- **User Registration** - Account creation with validation
+- **Profile Management** - Edit username, email, and avatar
+- **Avatar Upload** - Image processing and storage
+- **Admin Dashboard** - User statistics and activity logs
+- **Server Logging** - Comprehensive activity tracking
+- **Real-time Updates** - Live dashboard data
+
+#### API Endpoints:
+- **POST /api/register** - User registration
+- **POST /api/login** - User authentication
+- **GET /api/profile** - Get user profile
+- **PUT /api/profile** - Update profile information
+- **POST /api/upload-avatar** - Profile picture upload
+- **GET /api/logs** - Server activity logs
+- **GET /api/stats** - User statistics
+
+#### Frontend Features:
+- **Single Page Application** - No page reloads
+- **Responsive Design** - Works on all devices
+- **Modern UI/UX** - Clean, professional interface
+- **Form Validation** - Client and server-side validation
+- **File Upload** - Drag & drop avatar upload
+- **Real-time Alerts** - User feedback system
+
+#### Security Features:
+- **Password Hashing** - bcrypt encryption
+- **JWT Tokens** - Secure authentication
+- **Input Validation** - SQL injection prevention
+- **File Validation** - Safe image uploads
+- **CORS Configuration** - Cross-origin protection
+
+#### Run the project:
+```bash
+# Install dependencies
+cd user-management-api
+pip install -r requirements.txt
+
+# Start backend server
+cd backend
+python app.py
+# Backend: http://localhost:5000
+
+# Start frontend (new terminal)
+cd ../frontend
+python -m http.server 3000
+# Frontend: http://localhost:3000
+
+# Test API with cURL
+curl -X POST http://localhost:5000/api/register \
+  -H "Content-Type: application/json" \
+  -d '{"username":"test","email":"test@example.com","password":"password123"}'
+```
+
 ## 🛠️ Global Requirements
 
 - **Python 3.7+** (Required for all projects)
-- **Flask** - Web calculator only
+- **Flask** - Web calculator, User management API
 - **pyperclip** - GUI password generator clipboard features
 - **speedtest-cli** - Internet speed test functionality
-- **Pillow** - ASCII art generator image processing
+- **Pillow** - ASCII art generator image processing, User API avatar processing
 - **pyfiglet** - ASCII art generator text styling
+- **bcrypt** - User management API password hashing
+- **PyJWT** - User management API authentication
+- **Flask-CORS** - User management API cross-origin requests
 
 ### 📦 Quick Install All Dependencies
 ```bash
 # Install all project dependencies at once
-pip install flask pyperclip speedtest-cli Pillow pyfiglet
+pip install flask pyperclip speedtest-cli Pillow pyfiglet bcrypt PyJWT Flask-CORS
 ```
 
 ## 🎯 Learning Goals
@@ -259,6 +324,7 @@ This repository demonstrates progressive Python concepts:
 | **🟢 Beginner** | Basic Python, Input/Output, Conditionals | Calculator, Password Gen, Guessing Game, ASCII Art |
 | **🟡 Intermediate** | GUI Programming, Database, File I/O | TODO App, Advanced GUIs |
 | **🟠 Advanced** | Threading, API Integration, Network Programming | Speed Test, Web Calculator |
+| **🔴 Expert** | Full-Stack Development, Authentication, Security | User Management API |
 
 ### 📚 Technical Concepts
 - **Multiple Implementation Approaches** - Same functionality, different technologies
@@ -269,6 +335,9 @@ This repository demonstrates progressive Python concepts:
 - **Network Programming** - HTTP requests and API integration
 - **Threading** - Background operations and real-time updates
 - **CRUD Operations** - Create, Read, Update, Delete data patterns
+- **API Development** - RESTful API design and implementation
+- **Authentication & Security** - JWT tokens, password hashing, CORS
+- **Frontend-Backend Integration** - Full-stack communication patterns
 - **Code Organization** - Clean project structure and best practices
 - **Security Practices** - Safe input handling and validation
 
@@ -282,7 +351,7 @@ This repository demonstrates progressive Python concepts:
 
 2. **Install dependencies**
    ```bash
-   pip install flask pyperclip speedtest-cli Pillow pyfiglet
+   pip install flask pyperclip speedtest-cli Pillow pyfiglet bcrypt PyJWT Flask-CORS
    ```
 
 3. **Pick a project from the table above and follow the specific instructions!**
