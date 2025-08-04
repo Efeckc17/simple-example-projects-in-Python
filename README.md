@@ -1,5 +1,12 @@
 # 🐍 Simple Python Projects
 
+![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Stars](https://img.shields.io/github/stars/Efeckc17/simple-example-projects-in-Python)
+![Forks](https://img.shields.io/github/forks/Efeckc17/simple-example-projects-in-Python)
+![Issues](https://img.shields.io/github/issues/Efeckc17/simple-example-projects-in-Python)
+![Last Commit](https://img.shields.io/github/last-commit/Efeckc17/simple-example-projects-in-Python)
+
 Collection of simple Python projects for learning and practice.
 
 ## 📋 Projects Overview
@@ -269,7 +276,7 @@ This repository demonstrates progressive Python concepts:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/toxi360/simple-example-projects-in-Python.git
+   git clone https://github.com/Efeckc17/simple-example-projects-in-Python.git
    cd simple-example-projects-in-Python
    ```
 
@@ -285,5 +292,19 @@ This repository demonstrates progressive Python concepts:
 MIT License
 
 ---
+
+## 🌟 Support This Project
+
+If you find this repository helpful for learning Python, please:
+
+⭐ **Star the repository** - Show your support!  
+🍴 **Fork it** - Create your own version  
+🐛 **Report issues** - Help us improve  
+💡 **Suggest features** - Share your ideas  
+
+## 📞 Connect
+
+- **GitHub:** [@Efeckc17](https://github.com/Efeckc17)
+- **Repository:** [simple-example-projects-in-Python](https://github.com/Efeckc17/simple-example-projects-in-Python)
 
 ⭐ Star this repo if you find it useful for learning Python!
